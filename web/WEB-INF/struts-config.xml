@@ -1,0 +1,40 @@
+<?xml version="1.0" encoding="ISO-8859-1" ?>
+
+<!DOCTYPE struts-config
+  PUBLIC "-//Apache Software Foundation//DTD Struts
+  Configuration 1.1//EN"
+  "http://jakarta.apache.org/struts/dtds/struts-
+  config_1_1.dtd">
+
+<struts-config>
+
+  <form-beans>
+    <form-bean name="lookupForm" type="LookupForm"/>
+    <form-bean name="loginForm" type="form.LoginForm"/>
+  </form-beans>
+
+  <action-mappings>
+
+    <action path="/Lookup"
+    type="LookupAction"
+    name="lookupForm" >
+    <forward name="success" path="/quote.jsp"/>
+    <forward name="failure" path="/index.jsp"/>
+  </action>
+
+   <action path="/login"
+    type="action.LoginAction"
+    name="loginForm" >
+    <forward name="success" path="/processAction.do"/>
+    <forward name="failure" path="/index.jsp"/>
+  </action>
+
+   <action path="/processAction"
+    type="action.ProcessAction">
+     <forward name="success" path="/quote.jsp"/>
+     </action>
+
+  </action-mappings>
+
+</struts-config>
+

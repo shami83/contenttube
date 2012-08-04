@@ -1,0 +1,9 @@
+<server>
+    <mbean code="org.jboss.hibernate.jmx.Hibernate" name="jboss.adminguide:name=imagetubeSessionFactory">
+        <attribute name="DatasourceName">java:/imagetubeDS</attribute>
+        <attribute name="Dialect">org.hibernate.dialect.MySQLDialect</attribute>
+        <attribute name="SessionFactoryName">java:/hibernate/imagetubeSessionFactory</attribute>
+        <attribute name="CacheProviderClass">org.hibernate.cache.HashtableCacheProvider</attribute>
+        <attribute name="ShowSqlEnabled">true</attribute>
+     </mbean>
+</server>

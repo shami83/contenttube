@@ -1,0 +1,66 @@
+<?xml version="1.0"?>
+<!DOCTYPE hibernate-mapping PUBLIC
+        "-//Hibernate/Hibernate Mapping DTD 3.0//EN"
+        "http://hibernate.sourceforge.net/hibernate-mapping-3.0.dtd">
+
+<hibernate-mapping>
+    <class name="dao.User" table="img_user">
+        <id name="id" type="int">
+            <column name="id"/>
+            <generator class="native"/>
+        </id>
+        <timestamp name="modifiedTime" column="modified_time"/>
+        <property name="createTime" type="timestamp">
+            <column name="create_time" length="19" not-null="true">
+                <comment></comment>
+            </column>
+        </property>
+
+        <property name="firstName">
+            <column name="fname"/>
+        </property>
+
+        <property name="lastName" type="string">
+            <column name="lname" length="45" not-null="true">
+                <comment></comment>
+            </column>
+        </property>
+        <property name="emailId" type="string">
+            <column name="email_id" length="45" not-null="true">
+                <comment></comment>
+            </column>
+        </property>
+
+         <property name="address" type="string">
+            <column name="address" not-null="true">
+                <comment></comment>
+            </column>
+        </property>
+         <property name="city" type="string">
+            <column name="city"  not-null="true">
+                <comment></comment>
+            </column>
+        </property>
+
+         <property name="passWord" type="string">
+            <column name="password"  not-null="true">
+                <comment></comment>
+            </column>
+        </property>
+
+        
+
+         <property name="imageUrl" type="string">
+            <column name="image_url"  not-null="true">
+                <comment></comment>
+            </column>
+        </property>
+
+        <property name="admin" type="short">
+            <column name="isadmin">
+                <comment></comment>
+            </column>
+        </property>
+
+    </class>
+</hibernate-mapping>

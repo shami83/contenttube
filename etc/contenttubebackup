@@ -1,0 +1,143 @@
+-- MySQL Administrator dump 1.4
+--
+-- ------------------------------------------------------
+-- Server version	5.0.13-rc-nt
+
+
+/*!40101 SET @OLD_CHARACTER_SET_CLIENT=@@CHARACTER_SET_CLIENT */;
+/*!40101 SET @OLD_CHARACTER_SET_RESULTS=@@CHARACTER_SET_RESULTS */;
+/*!40101 SET @OLD_COLLATION_CONNECTION=@@COLLATION_CONNECTION */;
+/*!40101 SET NAMES utf8 */;
+
+/*!40014 SET @OLD_UNIQUE_CHECKS=@@UNIQUE_CHECKS, UNIQUE_CHECKS=0 */;
+/*!40014 SET @OLD_FOREIGN_KEY_CHECKS=@@FOREIGN_KEY_CHECKS, FOREIGN_KEY_CHECKS=0 */;
+/*!40101 SET @OLD_SQL_MODE=@@SQL_MODE, SQL_MODE='NO_AUTO_VALUE_ON_ZERO' */;
+
+
+--
+-- Create schema contenttube
+--
+
+CREATE DATABASE /*!32312 IF NOT EXISTS*/ contenttube;
+USE contenttube;
+
+--
+-- Table structure for table `contenttube`.`img_operation`
+--
+
+DROP TABLE IF EXISTS `img_operation`;
+CREATE TABLE `img_operation` (
+  `id` int(10) unsigned NOT NULL auto_increment,
+  `operation_name` varchar(100) default NULL,
+  `bit_map` int(10) unsigned default NULL,
+  `display_name` varchar(100) default NULL,
+  PRIMARY KEY  (`id`)
+) ENGINE=InnoDB DEFAULT CHARSET=latin1;
+
+--
+-- Dumping data for table `contenttube`.`img_operation`
+--
+
+/*!40000 ALTER TABLE `img_operation` DISABLE KEYS */;
+INSERT INTO `img_operation` (`id`,`operation_name`,`bit_map`,`display_name`) VALUES 
+ (1,'viewProfile',1,'View Profile'),
+ (2,'editProfile',2,'Edit profile'),
+ (3,'viewAlbum',4,'View Album'),
+ (4,'editAlbum',8,'Edit Album'),
+ (5,'deletealbum',16,'Delete Album'),
+ (6,'upload',32,'Upload'),
+ (7,'tag',64,'Add to my account');
+/*!40000 ALTER TABLE `img_operation` ENABLE KEYS */;
+
+
+--
+-- Table structure for table `contenttube`.`img_role`
+--
+
+DROP TABLE IF EXISTS `img_role`;
+CREATE TABLE `img_role` (
+  `id` int(10) unsigned NOT NULL auto_increment,
+  `index` int(10) unsigned NOT NULL,
+  `role_name` varchar(100) NOT NULL,
+  `bit_map` int(10) unsigned default NULL,
+  PRIMARY KEY  (`id`)
+) ENGINE=InnoDB DEFAULT CHARSET=latin1;
+
+--
+-- Dumping data for table `contenttube`.`img_role`
+--
+
+/*!40000 ALTER TABLE `img_role` DISABLE KEYS */;
+INSERT INTO `img_role` (`id`,`index`,`role_name`,`bit_map`) VALUES 
+ (1,4,'ADMIN',127),
+ (2,1,'OWNER',127),
+ (3,3,'FRIEND',69),
+ (4,2,'GUIEST',5);
+/*!40000 ALTER TABLE `img_role` ENABLE KEYS */;
+
+
+--
+-- Table structure for table `contenttube`.`img_user`
+--
+
+DROP TABLE IF EXISTS `img_user`;
+CREATE TABLE `img_user` (
+  `id` int(10) unsigned NOT NULL auto_increment,
+  `fname` varchar(45) default NULL,
+  `lname` varchar(45) default NULL,
+  `address` varchar(200) default NULL,
+  `city` varchar(50) default NULL,
+  `isadmin` smallint(5) unsigned default NULL,
+  `image_url` varchar(200) default NULL,
+  `create_time` date default NULL,
+  `modified_time` datetime NOT NULL,
+  `email_id` varchar(200) default NULL,
+  `password` varchar(50) default NULL,
+  PRIMARY KEY  (`id`)
+) ENGINE=InnoDB DEFAULT CHARSET=latin1;
+
+--
+-- Dumping data for table `contenttube`.`img_user`
+--
+
+/*!40000 ALTER TABLE `img_user` DISABLE KEYS */;
+INSERT INTO `img_user` (`id`,`fname`,`lname`,`address`,`city`,`isadmin`,`image_url`,`create_time`,`modified_time`,`email_id`,`password`) VALUES 
+ (1,'Shamik','Mitra','1,niveditalane,kol3','kolkata',0,'shamik.jpg','2011-06-30','2011-06-30 12:12:45','mitrashamik@gmail.com','aaaaaa'),
+ (2,'Swastika','Basu','xyz','kolkata',0,'swastika.jpg','2011-06-30','2011-06-30 12:12:45','swastika@gmail.com','aaaaaa'),
+ (3,'Samir','Mitra','xyz','kilkata',0,'samir.jpg','2011-06-30','2011-06-30 12:12:45','samir@gmail.com','aaaaaa');
+/*!40000 ALTER TABLE `img_user` ENABLE KEYS */;
+
+
+--
+-- Table structure for table `contenttube`.`img_user_to_friend`
+--
+
+DROP TABLE IF EXISTS `img_user_to_friend`;
+CREATE TABLE `img_user_to_friend` (
+  `id` int(10) unsigned NOT NULL auto_increment,
+  `user_id` int(10) unsigned NOT NULL,
+  `friend_id` int(10) unsigned NOT NULL,
+  `isaccepted` smallint(5) unsigned NOT NULL default '0',
+  `create_time` date NOT NULL,
+  `modified_time` datetime NOT NULL,
+  PRIMARY KEY  (`id`)
+) ENGINE=InnoDB DEFAULT CHARSET=latin1;
+
+--
+-- Dumping data for table `contenttube`.`img_user_to_friend`
+--
+
+/*!40000 ALTER TABLE `img_user_to_friend` DISABLE KEYS */;
+INSERT INTO `img_user_to_friend` (`id`,`user_id`,`friend_id`,`isaccepted`,`create_time`,`modified_time`) VALUES 
+ (1,1,2,1,'2011-06-30','2011-06-30 12:12:45'),
+ (2,2,1,1,'2011-06-30','2011-06-30 12:12:45'),
+ (3,1,3,0,'2011-06-30','2011-06-30 12:12:45');
+/*!40000 ALTER TABLE `img_user_to_friend` ENABLE KEYS */;
+
+/*!40101 SET SQL_MODE=@OLD_SQL_MODE */;
+/*!40014 SET FOREIGN_KEY_CHECKS=@OLD_FOREIGN_KEY_CHECKS */;
+/*!40014 SET UNIQUE_CHECKS=@OLD_UNIQUE_CHECKS */;
+/*!40101 SET CHARACTER_SET_CLIENT=@OLD_CHARACTER_SET_CLIENT */;
+/*!40101 SET CHARACTER_SET_RESULTS=@OLD_CHARACTER_SET_RESULTS */;
+/*!40101 SET COLLATION_CONNECTION=@OLD_COLLATION_CONNECTION */;
+/*!40101 SET CHARACTER_SET_CLIENT=@OLD_CHARACTER_SET_CLIENT */;

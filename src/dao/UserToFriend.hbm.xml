@@ -1,0 +1,37 @@
+<?xml version="1.0"?>
+<!DOCTYPE hibernate-mapping PUBLIC
+        "-//Hibernate/Hibernate Mapping DTD 3.0//EN"
+        "http://hibernate.sourceforge.net/hibernate-mapping-3.0.dtd">
+
+<hibernate-mapping>
+    <class name="dao.UserToFriend" table="img_user_to_friend">
+        <id name="id" type="int">
+            <column name="id"/>
+            <generator class="native"/>
+        </id>
+        <timestamp name="modifiedTime" column="modified_time"/>
+        <property name="createTime" type="timestamp">
+            <column name="create_time" length="19" not-null="true">
+                <comment></comment>
+            </column>
+        </property>
+
+        <many-to-one name="user" class="dao.User" fetch="select" lazy="false">
+            <column name="user_id" not-null="true">
+                <comment></comment>
+            </column>
+        </many-to-one>
+        <many-to-one name="friend" class="dao.User" fetch="select" lazy="false">
+            <column name="friend_id" not-null="true">
+                <comment></comment>
+            </column>
+        </many-to-one>
+        <property name="hasAccepted" type="short">
+            <column name="isaccepted" length="45" not-null="true">
+                <comment></comment>
+            </column>
+        </property>
+
+
+    </class>
+</hibernate-mapping>

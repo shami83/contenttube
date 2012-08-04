@@ -1,0 +1,29 @@
+<?xml version="1.0"?>
+<!DOCTYPE hibernate-mapping PUBLIC
+        "-//Hibernate/Hibernate Mapping DTD 3.0//EN"
+        "http://hibernate.sourceforge.net/hibernate-mapping-3.0.dtd">
+
+<hibernate-mapping>
+    <class name="dao.Operation" table="img_operation">
+        <id name="id" type="int">
+            <column name="id"/>
+            <generator class="native"/>
+        </id>
+
+        <property name="operationName">
+            <column name="operation_name"/>
+        </property>
+
+        <property name="displayName" type="string">
+            <column name="display_name" length="45" not-null="true">
+                <comment></comment>
+            </column>
+        </property>
+        <property name="bitmap" type="int">
+            <column name="bit_map">
+                <comment></comment>
+            </column>
+        </property>
+         
+    </class>
+</hibernate-mapping>

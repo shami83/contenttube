@@ -1,0 +1,14 @@
+1. execute contenttubebackup to restore data and tables
+2. create a folder Uploads under D drive.see ImageServlet file for further reference.
+3. copy all images from images folder and keep them under Uploads.
+-----------------------------------------------------------------
+svn set up
+----------------------------------------------------------------------
+chekout
+file:///I:/svnrepos/content
+chekin project first time
+svn import D:\InstalledApps\ContentManagement  file:///svnrepos/content
+---------------------------------
+
+go through this link
+http://life.mysiteonline.org/archives/67-Installing-and-Setting-up-Subversion-SVN-Under-Windows-XP.html

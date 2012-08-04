@@ -1,0 +1,29 @@
+<?xml version="1.0"?>
+<!DOCTYPE hibernate-mapping PUBLIC
+        "-//Hibernate/Hibernate Mapping DTD 3.0//EN"
+        "http://hibernate.sourceforge.net/hibernate-mapping-3.0.dtd">
+
+<hibernate-mapping>
+    <class name="dao.Role" table="img_role">
+        <id name="id" type="int">
+            <column name="id"/>
+            <generator class="native"/>
+        </id>
+
+        <property name="index" type="int">
+            <column name="index"/>
+        </property>
+
+        <property name="roleName" type="string">
+            <column name="role_name" >
+                <comment></comment>
+            </column>
+        </property>
+        <property name="cumulativeBitmap" type="int">
+            <column name="bit_map">
+                <comment></comment>
+            </column>
+        </property>
+
+    </class>
+</hibernate-mapping>

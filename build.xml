@@ -1,0 +1,13 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project name="Packaging Generator" default="dd">
+	<target name="dd" description="imagetube.har">
+		<jar destfile="imagetube.har">
+		<zipfileset dir="META-INF" prefix="META-INF">
+		<include name="hibernate-service.xml"/>
+        <include name="jboss-app.xml"/>
+		</zipfileset>
+		<zipfileset dir="out\production\ContentManagement\dao" prefix="dao" includes="**/*.class,**/*.xml"/>
+		</jar>
+		</target>
+
+</project>
