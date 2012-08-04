@@ -15,7 +15,7 @@
       </tr>
       <tr>
         <td height="68" width="48%">
-          
+
         </td>
       </tr>
       <tr>
@@ -26,8 +26,7 @@
       </tr>
     </table>
 
-    <html:form action="login"
-     >
+    <html:form action="login">
 
       <table width="45%" border="0">
         <tr>
@@ -40,6 +39,9 @@
         </tr>
         <tr>
           <td colspan="2" align="center"><html:submit /></td>
+        </tr>
+           <tr>
+          <td colspan="2" align="center"><a href="userRegistration.do">link</a></td>
         </tr>
       </table>
     </html:form>

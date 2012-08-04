@@ -33,7 +33,7 @@
     type="action.ProcessAction">
      <forward name="success" path="/quote.jsp"/>
      </action>
-
+    <action path="/userRegistration" type="wizard.userRegistration.UserRegistrationWizard"/>
   </action-mappings>
 
 </struts-config>

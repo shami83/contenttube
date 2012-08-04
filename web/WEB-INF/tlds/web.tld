@@ -36,4 +36,9 @@
 		<bodycontent>empty</bodycontent>
 
 	</tag>
+    <tag>
+		<name>wizardButton</name>
+		<tagclass>tag.Wizard.WizardButton</tagclass>
+		<bodycontent>empty</bodycontent>
+  	</tag>
     </taglib>

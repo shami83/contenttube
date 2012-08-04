@@ -23,4 +23,6 @@ public class WebConstants {
 
     //friends
      public static final String FRIEND_LIST = "friendList";
+     //Model
+     public static final String MODEL = "Model";
 }
