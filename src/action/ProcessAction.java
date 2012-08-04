@@ -46,7 +46,7 @@ public class ProcessAction extends Action {
               {
                   friend = (User)ImageTubeDao.getDao().findbyId(Integer.parseInt(friendId),User.class);
               }
-              else //from loginAction
+              else //from loginAction test git
               {
                  friend = (User)request.getSession().getAttribute(WebConstants.FRIEND);
               }
