@@ -26,6 +26,11 @@ public class HTML {
         return buff.toString();
     }
 
+      public static String openElement(String element)
+    {
+        return openElement(element,null) ;
+    }
+
     public static String closeElement(String element)
     {
         StringBuffer buff = new StringBuffer("</"+element+">");
